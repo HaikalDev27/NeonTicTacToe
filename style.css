@@ -1,0 +1,222 @@
+:root{
+    --shadow:0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #03bcf4, 0 0 7px #03bcf4, 0 0 8px #03bcf4, 0 0 10px #03bcf4;
+    --background:  #07252d;
+    --text-color: #0e3742;
+}
+
+/* warna latar belakang */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s linear;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background);
+}
+
+.WaterMark1{
+  position: absolute;
+  color:var(--text-color);
+  padding-top: 50%;
+  text-align: center;
+}
+
+.color-switch{
+    position: fixed;
+    top: 25px; 
+    right: -200px;
+    width: 200px;
+    padding: 10px;
+    background: #fff;
+    z-index: 1000;
+}
+
+.color-switch.active{
+    right: 0px;
+}
+
+.color-switch a ion-icon{
+    width: 180px;
+    color: var(--base-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    text-align: center;
+}
+
+.color-switch h3{
+    color: var(--base-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    text-align: center;
+}
+
+.color-switch .switch-btn{
+    position: absolute;
+    top: 0;
+    left: -75px;
+    background: var(--text-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.color-switch .switch-btn i{
+    animation:rotate 2s linear infinite;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.color-switch .theme-buttons-containner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.color-switch .theme-buttons-containner .theme-buttons{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    background-color:var(--background);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+    z-index: 1000;
+  }
+  
+  label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: wheat;
+  }
+  
+  select {
+    font-size: 15px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--text-color);
+  }
+  
+  button {
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--text-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  
+  /* style judul game */
+  h1 {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: var(--shadow);
+  }
+  
+  /* style kotak permainan */
+  #game-board {
+    margin: auto;
+    margin-top: 3rem;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* style kotak permainan yang belum terisi */
+  #game-board td {
+    width: 100px;
+    height: 100px;
+    font-size: 4rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    box-shadow:var(--shadow);
+  }
+  
+  /* style kotak permainan yang sudah terisi */
+  #game-board td:not(:empty) {
+    color: #fff;
+    text-shadow: var(--shadow);
+  }
+  
+  /* style tombol pemain */
+
+  #player-buttons{
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  #player-buttons button {
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #fff;
+    background-color:var(--background);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    }
+    
+    /* style tombol pemain ketika dihover */
+    #player-buttons button:hover {
+    background-color: #fff;
+    color: var(--background);
+    }
+    
+    /* style tombol reset */
+    #reset {
+    margin-left: 1rem;
+    }
+    
+    /* style pesan kemenangan */
+    #winner {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: var(--shadow);
+    margin-top: 1rem;
+    }
+  

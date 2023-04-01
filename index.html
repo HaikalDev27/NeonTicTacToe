@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon (1).ico">
+</head>
+    <div class="color-switch">
+        <div class="switch-btn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <a href="docs.html">
+            <ion-icon name="document-text-outline"></ion-icon> 
+        </a>
+        
+        <h3>Colors</h3>
+
+        <div class="theme-buttons-containner">
+            <span class="theme-buttons" data-base="#2d0707" data-text="#420e0ez" data-anm="0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #f40303, 0 0 7px #f40303, 0 0 8px #f40303, 0 0 10px #f40303" style="background: #2d0707;"></span>
+            <span class="theme-buttons" data-base="#07252d" data-text="#0e3742" data-anm="0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #03bcf4, 0 0 7px #03bcf4, 0 0 8px #03bcf4, 0 0 10px #03bcf4" style="background: #07252d;"></span>
+            <span class="theme-buttons" data-base="#FF9300" data-text="#FF5403" data-anm="0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #FFCA03, 0 0 7px #FFCA03, 0 0 8px #FFCA03, 0 0 10px #FFCA03" style="background: #FF9300;"></span>
+        </div>
+    </div>
+  <body>
+
+    <div class="WaterMark1">
+      <h3>Powered by GitHub</h3>
+      <h5>Made by Haikal Apriliano [FumetsuChigura]</h5>
+  </div>
+  
+    <div id="choose">
+        <label for="opponent">Chose opponent</label>
+        <select id="opponent">
+          <option value="human">2 Player</option>
+          <option value="computer">AI</option>
+        </select>
+        <button id="start-game">Mulai Game</button>
+      </div>
+
+    <h1>Neon Tic Tac Toe</h1>
+    
+    <table id="game-board">
+      <tr>
+        <td id="cell-0"></td>
+        <td id="cell-1"></td>
+        <td id="cell-2"></td>
+      </tr>
+      <tr>
+        <td id="cell-3"></td>
+        <td id="cell-4"></td>
+        <td id="cell-5"></td>
+      </tr>
+      <tr>
+        <td id="cell-6"></td>
+        <td id="cell-7"></td>
+        <td id="cell-8"></td>
+      </tr>
+    </table>
+    <div id="player-buttons">
+        <button id="player1">Player 1 (X)</button>
+        <button id="player2">Player 2 (O)</button>
+        <button id="reset">Reset</button>
+      </div>
+    <script src="app.js"></script>
+    <script>
+        document.querySelector('.switch-btn').onclick = () =>{
+            document.querySelector('.color-switch').classList.toggle('active');
+        };
+    
+        let themeButtons = document.querySelectorAll('.theme-buttons');
+        themeButtons.forEach(color =>{
+            color.addEventListener('click', () =>{
+                let dataBase = color.getAttribute('data-base');
+                document.querySelector(':root').style.setProperty('--background', dataBase);
+                let dataText = color.getAttribute('data-text');
+                document.querySelector(':root').style.setProperty('--text-color', dataText);
+                let dataAnm = color.getAttribute('data-anm');
+                document.querySelector(':root').style.setProperty('--shadow', dataAnm);
+            });
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
