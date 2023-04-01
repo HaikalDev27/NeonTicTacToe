@@ -27,6 +27,7 @@ body{
   color:var(--text-color);
   padding-top: 50%;
   text-align: center;
+  z-index:1;
 }
 
 .color-switch{
@@ -36,7 +37,7 @@ body{
     width: 200px;
     padding: 10px;
     background: #fff;
-    z-index: 1100;
+    z-index: 5;
 }
 
 .color-switch.active{
@@ -108,7 +109,7 @@ body{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     width: 300px;
-    z-index: 1000;
+    z-index: 4;
   }
   
   label {
@@ -160,6 +161,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 3;
   }
   
   /* style kotak permainan yang belum terisi */
